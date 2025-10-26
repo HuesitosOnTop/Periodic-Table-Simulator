@@ -15,6 +15,12 @@ public class FileHandler {
         user_data
     };
 
+    /*
+     * Adds all the files in the array with their respective file locations
+     * CreateDependecies() first adds all of the files that do not exist, it then proceeds
+     * to create the specific file instead of all of the files at once, this helps with
+     * resource management and helps to not override files/folders with data
+     */
     public static void CreateDependecies() {
         ArrayList<String> paths = new ArrayList<String>();
 
@@ -46,6 +52,7 @@ public class FileHandler {
             System.out.println("All files here");
         }
     }
+
     // Saves to the specified file
     public static void SaveFile(File file, String lock, String key) {
 		try {
@@ -57,6 +64,7 @@ public class FileHandler {
 		}
 	}
 
+    // Loads x amount of data from a file and returns a string array with all of the given data
 	public static String[] LoadData(int amount, File file) {
         String[] values = new String[amount];
 

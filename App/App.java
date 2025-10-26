@@ -15,6 +15,7 @@ public class App {
         String input = "";
         File user_dat = new File("");
 
+        // Checks to see if the user file exists, and if it doesnt, create all files
         if (FileHandler.DoesFileExists(2)) {
             user_dat = new File(FileHandler.GetFile(2).getAbsolutePath());
             User.LoadUser();
